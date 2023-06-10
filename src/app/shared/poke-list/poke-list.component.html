@@ -1,33 +1,22 @@
+<ng-template ngFor let-pokemon [ngForOf]="getAllPokemons"> 
 <a class="pokemon">
     <section class="pokemon__status">
         <h2>
-            Bulbassaur
+            {{ pokemon.name }} {{ pokemon.pokedexNumber }}
         </h2>
 
         <ul>
-            <li>Type 1</li>
-            <li>Type 2</li>
+            <li>
+                {{ pokemon.type[0] }}
+            </li>
+            <li>
+                {{ pokemon.type[1] }}
+            </li>
         </ul>
     </section>
 
     <section class="pokemon__image"> 
-        <img src="assets/001.png">
+        <img [src]= pokemon.urlImage [alt]=pokemon.name>
     </section>
 </a>
-
-<a class="pokemon">
-    <section class="pokemon__status">
-        <h2>
-            Bulbassaur
-        </h2>
-
-        <ul>
-            <li>Type 1</li>
-            <li>Type 2</li>
-        </ul>
-    </section>
-
-    <section class="pokemon__image"> 
-        <img src="assets/001.png">
-    </section>
-</a>
+</ng-template>
