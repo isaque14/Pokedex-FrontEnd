@@ -1,21 +1,31 @@
-<ng-template ngFor let-pokemon [ngForOf]="getAllPokemons"> 
-<a [routerLink]="['details', pokemon.pokedexNumber]" class="pokemon">
-    <section class="pokemon__status">
-        <h2>
-            {{ pokemon.name }} 
-        </h2>
-        <ul>
-            <li>
-                {{ pokemon.type[0] }}
-            </li>
-            <li>
-                {{ pokemon.type[1] }}
-            </li>
-        </ul>
-    </section>
+<poke-search (emmitSearch)=""></poke-search>
 
-    <section class="pokemon__image"> 
-        <img [src]= pokemon.urlImage [alt]=pokemon.name>
-    </section>
-</a>
-</ng-template>
+<section class="listagem">
+    <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+        <a [routerLink]="['details', pokemon.pokedexNumber]" class="pokemon">
+            <section class="pokemon__status">
+                <h2>
+                    {{ pokemon.name }}
+                </h2>
+                <ul>
+                    <li>
+                        {{ pokemon.type[0] }}
+                    </li>
+                    <li>
+                        {{ pokemon.type[1] }}
+                    </li>
+                </ul>
+                
+                <br/>
+                <br/>
+                <h3>
+                   N° {{ pokemon.pokedexNumber }}
+                </h3>
+            </section>
+
+            <section class="pokemon__image">
+                <img [src]=pokemon.urlImage [alt]=pokemon.name>
+            </section>
+        </a>
+    </ng-template>
+</section>
