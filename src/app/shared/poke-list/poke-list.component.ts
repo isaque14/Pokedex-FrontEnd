@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { filter } from 'rxjs';
 import { PokedexApiService } from 'src/app/services/pokedex-api.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { PokedexApiService } from 'src/app/services/pokedex-api.service';
 export class PokeListComponent implements OnInit {
   constructor(private pokedexApiService: PokedexApiService) { }
 
+  private setAllPokemons: any;
   public getAllPokemons: any;
 
   ngOnInit(): void {
@@ -16,9 +18,19 @@ export class PokeListComponent implements OnInit {
       res => {
         this.getAllPokemons = res.object;
         this.convertTypeNumbersToNames();
-        console.log(this.getAllPokemons);
+        this.setAllPokemons = this.getAllPokemons;
+        console.log(this.getAllPokemons[0]);
       }
     );
+  }
+
+  public getSearch(value: string){
+    const filter = this.setAllPokemons.filter((res: any) => {
+      const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1).toLocaleLowerCase();
+      return !res.name.indexOf(capitalizedValue) || res.pokedexNumber === Number(value);
+    });    
+
+    this.getAllPokemons = filter;
   }
 
   private convertTypeNumbersToNames(): void {
