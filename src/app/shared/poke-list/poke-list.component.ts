@@ -19,7 +19,6 @@ export class PokeListComponent implements OnInit {
         this.getAllPokemons = res.object;
         this.convertTypeNumbersToNames();
         this.setAllPokemons = this.getAllPokemons;
-        console.log(this.getAllPokemons[0]);
       }
     );
   }

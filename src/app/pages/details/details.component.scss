@@ -1,0 +1,100 @@
+/* Definindo as cores de Pokémon */
+:root {
+  --pokemon-yellow: #FFCB05;
+  --pokemon-red: #FF0000;
+  --pokemon-blue: #005BEA;
+  --pokemon-green: #77CC55;
+  --pokemon-purple: #9F5BBA;
+
+  /* Estilizando o link de voltar */
+  a {
+    display: inline-block;
+    background-color: var(--pokemon-yellow);
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+
+  a:hover {
+    background-color: var(--pokemon-red);
+  }
+}
+
+.true {
+  color: green;
+}
+
+.false {
+  color: red;
+}
+
+
+/* Estilo geral do card */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+main {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Estilizando os títulos */
+.name {
+  font-size: 36px;
+  color: #FF0000;
+  animation: slideInLeft 1s;
+}
+
+h2 {
+  font-size: 24px;
+  color: #005BEA;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  color: #9F5BBA;
+}
+
+/* Estilizando as seções */
+section {
+  margin-bottom: 20px;
+}
+
+/* Estilizando a imagem */
+img {
+  display: block;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+/* Estilizando a lista */
+ol {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Animação slideInLeft */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
