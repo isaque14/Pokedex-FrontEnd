@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs';
 import { PokedexApiService } from 'src/app/services/pokedex-api.service';
 
 
@@ -13,11 +12,11 @@ export class DetailsComponent implements OnInit {
 
   public pokemon: any;
   public evolutionLine: any[] = [];
+  public isLoading: boolean = false;
 
   constructor(
     private activateRoute: ActivatedRoute, 
-    private pokedexApiService: PokedexApiService,
-    private router: Router) { }
+    private pokedexApiService: PokedexApiService) { }
 
   ngOnInit(): void {
     this.getPokemonById();
@@ -33,15 +32,16 @@ export class DetailsComponent implements OnInit {
     });
 
     this.getPokemonsInEvolutionLine(this.pokemon.object.evolutionLine);
+    this.isLoading = true;
   }
 
   getPokemonsInEvolutionLine(namePokemons: string[]){
     namePokemons.forEach((name: string) => {
       this.pokedexApiService.getApiPokemonByname(name).subscribe((pokemonData) => {
         this.evolutionLine.push(pokemonData);
-        console.log("teste a Linha de evolução ", pokemonData);
       })
     });
+    this.isLoading = true;
   }
   
 }

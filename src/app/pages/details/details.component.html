@@ -1,12 +1,15 @@
 <poke-header></poke-header>
 
-  <main>
+<main>
+
+  <ng-template [ngIf]="isLoading">
+
     <section class="button-section">
       <a [routerLink]="['']">
         Voltar
       </a>
     </section>
-    
+
     <section class="pokemon__name">
       <h1 class="slideInLeft">{{pokemon.object.name}}</h1>
     </section>
@@ -42,28 +45,29 @@
               Mega: {{pokemon.object.isMega}}
             </li>
 
-            <li class="border" [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">        
-              Stage Evolutions:  
+            <li class="border"
+              [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">
+              Stage Evolutions:
 
               <a [href]="'http://localhost:4200/details/'+ evolutionLine[0].object.pokedexNumber" class="img-evolution">
                 <img [src]="evolutionLine[0].object.urlImage" class="img-evolution">
-              </a>             
-            
+              </a>
+
               <a [href]="'http://localhost:4200/details/'+ evolutionLine[1].object.pokedexNumber" class="img-evolution">
                 <img [src]="evolutionLine[1].object.urlImage" class="img-evolution">
-              </a> 
+              </a>
 
               <a [href]="'http://localhost:4200/details/'+ evolutionLine[2].object.pokedexNumber" class="img-evolution">
                 <img [src]="evolutionLine[2].object.urlImage" class="img-evolution">
-              </a> 
+              </a>
 
             </li>
           </ol>
-          
+
 
         </section>
 
-        
+
 
       </article>
     </section>
@@ -74,4 +78,6 @@
       width="100%"
       *ngIf="apiError"
     > -->
-  </main>
+
+  </ng-template>
+</main>

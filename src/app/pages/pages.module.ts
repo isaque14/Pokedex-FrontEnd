@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
+
 import { RoutingModule } from './routing.module';
-import { DetailsComponent } from './details/details.component';
+
 import { SharedModule } from '../shared/shared.module';
+import { HomeComponent } from './home/home.component';
+import { DetailsComponent } from './details/details.component';
+import { IndexComponent } from './index/index.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    IndexComponent
   ],
 
   imports: [
