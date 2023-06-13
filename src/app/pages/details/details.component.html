@@ -1,41 +1,43 @@
 <poke-header></poke-header>
 
   <main>
-    <section class="name">
+    <section class="pokemon__name">
       <h1 class="slideInLeft">{{pokemon.object.name}}</h1>
     </section>
 
-    <section class="pokemon__description">
-      <h2>
-        {{pokemon.object.description}}
-      </h2>
-    </section>
-
-    <section class="pokemon__information">
+    <section class="pokemon__status">
       <img [src]="pokemon.object.urlImage" [alt]="pokemon.object.urlImage" class="slideInDown">
 
       <article class="pokemon__status__statistics fadeIn">
         <section>
-          <h3>Informações</h3>
+
+          <section class="pokemon__description">
+            <h2>
+              {{pokemon.object.description}}
+            </h2>
+          </section>
+
+          <h3>Informations</h3>
 
           <ol>
-            <li [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">
-              Evolution Line: {{ pokemon.object.evolutionLine}}
-            </li>
             <li [ngClass]="{'true': pokemon.object.isStarter, 'false': !pokemon.object.isStarter}">
-              isStarter: {{pokemon.object.isStarter}}
+              Initial: {{pokemon.object.isStarter}}
             </li>
             <li [ngClass]="{'true': pokemon.object.isLegendary, 'false': !pokemon.object.isLegendary}">
-              isLegendary: {{pokemon.object.isLegendary}}
+              Legendary: {{pokemon.object.isLegendary}}
             </li>
             <li [ngClass]="{'true': pokemon.object.isMythical, 'false': !pokemon.object.isMythical}">
-              isMythical: {{pokemon.object.isMythical}}
+              Mythical: {{pokemon.object.isMythical}}
             </li>
             <li [ngClass]="{'true': pokemon.object.isUltraBeast, 'false': !pokemon.object.isUltraBeast}">
-              isUltraBeast: {{pokemon.object.isUltraBeast}}
+              UltraBeast: {{pokemon.object.isUltraBeast}}
             </li>
             <li [ngClass]="{'true': pokemon.object.isMega, 'false': !pokemon.object.isMega}">
-              isMega: {{pokemon.object.isMega}}
+              Mega: {{pokemon.object.isMega}}
+            </li>
+
+            <li [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">        
+              Evolution Line: {{ pokemon.object.evolutionLine}}
             </li>
           </ol>
           
