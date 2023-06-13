@@ -1,12 +1,18 @@
 <poke-header></poke-header>
 
   <main>
+    <section class="button-section">
+      <a [routerLink]="['']">
+        Voltar
+      </a>
+    </section>
+    
     <section class="pokemon__name">
       <h1 class="slideInLeft">{{pokemon.object.name}}</h1>
     </section>
 
     <section class="pokemon__status">
-      <img [src]="pokemon.object.urlImage" [alt]="pokemon.object.urlImage" class="slideInDown">
+      <img class="img-main" [src]="pokemon.object.urlImage" [alt]="pokemon.object.urlImage" class="slideInDown">
 
       <article class="pokemon__status__statistics fadeIn">
         <section>
@@ -36,19 +42,28 @@
               Mega: {{pokemon.object.isMega}}
             </li>
 
-            <li [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">        
-              Evolution Line: {{ pokemon.object.evolutionLine}}
+            <li class="border" [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">        
+              Stage Evolutions:  
+
+              <a [href]="'http://localhost:4200/details/'+ evolutionLine[0].object.pokedexNumber" class="img-evolution">
+                <img [src]="evolutionLine[0].object.urlImage" class="img-evolution">
+              </a>             
+            
+              <a [href]="'http://localhost:4200/details/'+ evolutionLine[1].object.pokedexNumber" class="img-evolution">
+                <img [src]="evolutionLine[1].object.urlImage" class="img-evolution">
+              </a> 
+
+              <a [href]="'http://localhost:4200/details/'+ evolutionLine[2].object.pokedexNumber" class="img-evolution">
+                <img [src]="evolutionLine[2].object.urlImage" class="img-evolution">
+              </a> 
+
             </li>
           </ol>
           
 
         </section>
 
-        <section>
-          <a [routerLink]="['']" class="btn btn__secondary">
-            Voltar
-          </a>
-        </section>
+        
 
       </article>
     </section>

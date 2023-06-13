@@ -1,4 +1,3 @@
-import { getLocaleId } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
@@ -20,9 +19,16 @@ export class PokedexApiService {
   getApiPokemonByPokedexNumber(number: number): Observable<any> {
     return this.http.get<any>(`${this.urlBase}pokemon/pokedexNumber/${number}`).pipe(
       map((data) => {
-        console.log('Dados recebidos TTTTTTTTT:', data);
         return data;
       })
     );
+  }
+
+  getApiPokemonByname(name: string): Observable<any>{
+    return this.http.get<any>(`${this.urlBase}pokemon/name/${name}`).pipe(
+      map((data) => {
+        return data;
+      })
+    )
   }
 }

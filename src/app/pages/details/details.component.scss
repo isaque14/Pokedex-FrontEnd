@@ -5,6 +5,27 @@
 main {
   margin-top: 0;
 
+  .button-section {
+    display: inline-block;
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .button-section a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .button-section:hover {
+    background-color: #cc5850;
+  }
+  
+
   .pokemon__description {
     font-size: 24px;
     font-weight: bold;
@@ -47,17 +68,40 @@ main {
   .pokemon__status {
     position: relative;
 
+    .img-evolution {
+      align-items: center;
+      padding-top: 20%;
+      padding-right: 20%;
+      position: relative;
+      max-width: rem-calc(70);
+    }
+    
+    .img-evolution a {
+      /* Estilos específicos para os elementos de imagem dentro da classe .img-evolution */
+      position: static;
+      top: 500px;
+      left: auto;
+      max-width: none;
+      z-index: initial;
+    
+      /* Remover Bug Animation */
+      -webkit-animation-fill-mode: none !important;
+      animation-fill-mode: none !important;
+    }
+    
+    /* Estilos para os elementos de imagem fora da classe .img-evolution */
     img {
       position: absolute;
       top: rem-calc(-90);
       left: rem-calc(30);
       max-width: rem-calc(880);
       z-index: 10;
-
-      //Remove Bug Animation
+    
+      /* Remover Bug Animation */
       -webkit-animation-fill-mode: none !important;
       animation-fill-mode: none !important;
     }
+    
 
     &__statistics {
       display: flex;
