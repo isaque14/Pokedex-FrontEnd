@@ -3,11 +3,18 @@
 $padding: rem-calc(20);
 
 :host {
+
+    .pink{
+        color: pink;
+        background-color: purple;
+    }
+
     .listagem {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         padding: $padding 0;
+        background-color: gray;
 
         .pokemon {
             position: relative;
@@ -15,7 +22,7 @@ $padding: rem-calc(20);
 
             width: calc(49% - 2.5rem);
             height: rem-calc(157 - 40);
-            background-color: var(--white);
+            background-color: red;
 
             margin-bottom: rem-calc(10);
             border-radius: rem-calc(10);
