@@ -7,7 +7,7 @@ import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'pokedex',
     component: HomeComponent
   },
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
-    path: 'index',
+    path: '',
     component: IndexComponent
   }
 ];

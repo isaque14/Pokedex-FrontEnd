@@ -3,11 +3,12 @@
 <section class="listagem">
 
     <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-        <a [routerLink]="['details', pokemon.pokedexNumber]" class="pokemon">
+        <a [routerLink]="['']" class="pokemon">
             <section class="pokemon__status">
                 <h2>
-                    {{ pokemon.name }}
+                    {{ pokemon.name }} 
                 </h2>
+                <h6>N° {{ pokemon.pokedexNumber }}</h6>
                 <ul>
                     <li>
                         {{ pokemon.type[0] }}
@@ -15,13 +16,16 @@
                     <li>
                         {{ pokemon.type[1] }}
                     </li>
+
+                    <br />
+                    <br />
+
+                    <li>
+                        
+                    </li>
+
                 </ul>
-                
-                <br/>
-                <br/>
-                <h3 class="pink">
-                   N° {{ pokemon.pokedexNumber }}
-                </h3>
+
             </section>
 
             <section class="pokemon__image">
