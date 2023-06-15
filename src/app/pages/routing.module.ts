@@ -4,10 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { PokedexComponent } from './pokedex/pokedex.component';
 
 const routes: Routes = [
   {
-    path: 'pokedex',
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -15,8 +16,15 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
-    path: '',
+    path: 'index',
     component: IndexComponent
+  },
+  {
+    path: '', redirectTo: '/index', pathMatch: 'full'
+  },
+  {
+    path: 'pokedex',
+    component: PokedexComponent
   }
 ];
 
