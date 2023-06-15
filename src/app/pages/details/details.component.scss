@@ -1,8 +1,44 @@
 @import '../../../config-scss/rem-calc.scss';
 
-:host {
+.img-small {
+  width: 30%;
+  height: auto;
+  position: static;
+  left: auto;
+  max-width: none;
+  z-index: initial;
+}
+
+.img-big {
+  width: 50px;
+  height: auto;
+}
+
+li{
+  font-size: rem-calc(18);
+}
+
+.status-li {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: rem-calc(18);
+  line-height: 130%;
+  padding-bottom: 10px;
+}
+
+.poke-description {
+  font-size: rem-calc(25);
+}
 
 main {
+
+  #home {
+    background: #ffc107;
+    color: white;
+  }
+
+
   margin-top: 60px;
 
   .button-section {
@@ -15,16 +51,16 @@ main {
     margin-top: 20px;
     transition: background-color 0.3s;
   }
-  
+
   .button-section a {
     color: #fff;
     text-decoration: none;
   }
-  
+
   .button-section:hover {
     background-color: #cc5850;
   }
-  
+
 
   .pokemon__description {
     font-size: 24px;
@@ -56,13 +92,6 @@ main {
       font-size: rem-calc(60);
       color: rgba(255, 255, 255, 0.1);
     }
-
-    h1,
-    h2 {
-      //Remove Bug Animation
-      -webkit-animation-fill-mode: none !important;
-      animation-fill-mode: none !important;
-    }
   }
 
   .pokemon__status {
@@ -75,7 +104,7 @@ main {
       position: relative;
       max-width: rem-calc(70);
     }
-    
+
     .img-evolution a {
       /* Estilos específicos para os elementos de imagem dentro da classe .img-evolution */
       position: static;
@@ -83,25 +112,19 @@ main {
       left: auto;
       max-width: none;
       z-index: initial;
-    
-      /* Remover Bug Animation */
-      -webkit-animation-fill-mode: none !important;
-      animation-fill-mode: none !important;
+
     }
-    
+
     /* Estilos para os elementos de imagem fora da classe .img-evolution */
-    img {
+    .img-evolution img {
       position: absolute;
       top: rem-calc(-90);
       left: rem-calc(30);
-      max-width: rem-calc(880);
+      max-width: rem-calc(30);
       z-index: 10;
-    
-      /* Remover Bug Animation */
-      -webkit-animation-fill-mode: none !important;
-      animation-fill-mode: none !important;
+
     }
-    
+
 
     &__statistics {
       display: flex;
@@ -133,6 +156,7 @@ main {
 
           font-size: rem-calc(18);
           line-height: 130%;
+          padding-bottom: 10px;
         }
       }
     }
@@ -168,4 +192,4 @@ main {
       }
     }
   }
-}}
+}

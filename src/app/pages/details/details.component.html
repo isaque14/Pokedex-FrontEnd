@@ -1,83 +1,67 @@
 <poke-header></poke-header>
 
 <main>
-
   <ng-template [ngIf]="isLoading">
-
-    <section class="button-section">
-      <a [routerLink]="['']">
-        Voltar
-      </a>
+    <section id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex">
+            <div class="align-self-center">
+              <h1 class="display-3">{{pokemon.object.name}}</h1>
+              <p class="poke-description">
+                {{pokemon.object.description}}
+              </p>
+    
+              <h3>Informations</h3>
+    
+              <ol>
+                <li class="status-li">
+                  Initial: <i *ngIf="pokemon.object.isStarter" class="bi bi-check-circle-fill text-success">OK</i>
+                          <i *ngIf="!pokemon.object.isStarter" class="bi bi-x-circle-fill text-danger">X</i>
+                </li>
+                <li class="status-li">
+                  Legendary: <i *ngIf="pokemon.object.isLegendary" class="bi bi-check-circle-fill text-success">OK</i>
+                             <i *ngIf="!pokemon.object.isLegendary" class="bi bi-x-circle-fill text-danger">X</i>
+                </li>
+                <li class="status-li">
+                  Mythical: <i *ngIf="pokemon.object.isMythical" class="bi bi-check-circle-fill text-success">OK</i>
+                            <i *ngIf="!pokemon.object.isMythical" class="bi bi-x-circle-fill text-danger">X</i>
+                </li>
+                <li class="status-li">
+                  UltraBeast: <i *ngIf="pokemon.object.isUltraBeast" class="bi bi-check-circle-fill text-success">OK</i>
+                              <i *ngIf="!pokemon.object.isUltraBeast" class="bi bi-x-circle-fill text-danger">X</i>
+                </li>
+                <li class="status-li">
+                  Mega: <i *ngIf="pokemon.object.isMega" class="bi bi-check-circle-fill text-success">OK</i>
+                        <i *ngIf="!pokemon.object.isMega" class="bi bi-x-circle-fill text-danger">X</i>
+                </li>
+    
+                <li [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">
+                  Stage Evolutions:
+                  <br>
+    
+                  <a [href]="'http://localhost:4200/details/'+ evolutionLine[0].object.pokedexNumber" >
+                    <img [src]="evolutionLine[0].object.urlImage" class="img-small">
+                  </a>
+    
+                  <a [href]="'http://localhost:4200/details/'+ evolutionLine[1].object.pokedexNumber" class="img-evolution">
+                    <img [src]="evolutionLine[1].object.urlImage" class="img-small">
+                  </a>
+    
+                  <a [href]="'http://localhost:4200/details/'+ evolutionLine[2].object.pokedexNumber" class="img-evolution">
+                    <img [src]="evolutionLine[2].object.urlImage"  class="img-small">
+                  </a>
+    
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="col-md-6 d-none d-md-block">
+            <img [src]="pokemon.object.urlImage" [alt]="pokemon.object.urlImage" class="img-fluid img-big">
+          </div>
+          <a [routerLink]='"[pokedex]"' class="btn btn-primary">Voltar</a>
+        </div>
+      </div>
     </section>
-
-    <section class="pokemon__name">
-      <h1 class="slideInLeft">{{pokemon.object.name}}</h1>
-    </section>
-
-    <section class="pokemon__status">
-      <img class="img-main" [src]="pokemon.object.urlImage" [alt]="pokemon.object.urlImage" class="slideInDown">
-
-      <article class="pokemon__status__statistics fadeIn">
-        <section>
-
-          <section class="pokemon__description">
-            <h2>
-              {{pokemon.object.description}}
-            </h2>
-          </section>
-
-          <h3>Informations</h3>
-
-          <ol>
-            <li [ngClass]="{'true': pokemon.object.isStarter, 'false': !pokemon.object.isStarter}">
-              Initial: {{pokemon.object.isStarter}}
-            </li>
-            <li [ngClass]="{'true': pokemon.object.isLegendary, 'false': !pokemon.object.isLegendary}">
-              Legendary: {{pokemon.object.isLegendary}}
-            </li>
-            <li [ngClass]="{'true': pokemon.object.isMythical, 'false': !pokemon.object.isMythical}">
-              Mythical: {{pokemon.object.isMythical}}
-            </li>
-            <li [ngClass]="{'true': pokemon.object.isUltraBeast, 'false': !pokemon.object.isUltraBeast}">
-              UltraBeast: {{pokemon.object.isUltraBeast}}
-            </li>
-            <li [ngClass]="{'true': pokemon.object.isMega, 'false': !pokemon.object.isMega}">
-              Mega: {{pokemon.object.isMega}}
-            </li>
-
-            <li class="border"
-              [ngClass]="{'true': pokemon.object.evolutionLine, 'false': !pokemon.object.evolutionLine}">
-              Stage Evolutions:
-
-              <a [href]="'http://localhost:4200/details/'+ evolutionLine[0].object.pokedexNumber" class="img-evolution">
-                <img [src]="evolutionLine[0].object.urlImage" class="img-evolution">
-              </a>
-
-              <a [href]="'http://localhost:4200/details/'+ evolutionLine[1].object.pokedexNumber" class="img-evolution">
-                <img [src]="evolutionLine[1].object.urlImage" class="img-evolution">
-              </a>
-
-              <a [href]="'http://localhost:4200/details/'+ evolutionLine[2].object.pokedexNumber" class="img-evolution">
-                <img [src]="evolutionLine[2].object.urlImage" class="img-evolution">
-              </a>
-
-            </li>
-          </ol>
-
-
-        </section>
-
-
-
-      </article>
-    </section>
-
-    <!-- <img
-      src="assets/error.png"
-      alt="Deu erro na mostragem do pokemon"
-      width="100%"
-      *ngIf="apiError"
-    > -->
-
   </ng-template>
 </main>
