@@ -57,9 +57,9 @@
             </div>
           </div>
           <div class="col-md-6 d-none d-md-block">
-            <img [src]="pokemon.object.urlImage" [alt]="pokemon.object.urlImage" class="img-fluid img-big">
+            <img [src]="pokemon.object.urlImage" [alt]="pokemon.object.urlImage" class="img-fluid">
           </div>
-          <a [routerLink]='"[pokedex]"' class="btn btn-primary">Voltar</a>
+          <a [routerLink]="'/' + 'pokedex' + '/'" class="btn btn-danger">Voltar</a>
         </div>
       </div>
     </section>

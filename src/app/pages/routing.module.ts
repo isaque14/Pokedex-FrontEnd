@@ -5,6 +5,7 @@ import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
+import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,12 @@ const routes: Routes = [
   {
     path: 'pokedex',
     component: PokedexComponent
+  },
+  {
+    path: 'rotomGpt',
+    component: RotomGPTComponent
   }
+
 ];
 
 @NgModule({
