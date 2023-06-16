@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
+import { LoginComponent } from './login/login.component'
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'rotomGpt',
     component: RotomGPTComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 
 ];

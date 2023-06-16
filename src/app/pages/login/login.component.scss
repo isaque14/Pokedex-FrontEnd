@@ -1,0 +1,22 @@
+section {
+    background-image: url('../../../assets/rotomWallpaper.png');
+    background-size: cover;
+    background-position: center;
+
+    img {
+        padding-top: 0;
+    }
+
+    .text-welcome {
+        color: hsl(216, 73%, 58%);
+        font-size: 25px;
+        /* Tamanho do texto desejado */
+    }
+
+}
+
+.bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+
+}

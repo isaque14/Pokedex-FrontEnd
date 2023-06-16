@@ -9,6 +9,7 @@ import { DetailsComponent } from './details/details.component';
 import { IndexComponent } from './index/index.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
     DetailsComponent,
     IndexComponent,
     PokedexComponent,
-    RotomGPTComponent
+    RotomGPTComponent,
+    LoginComponent
   ],
 
   imports: [
