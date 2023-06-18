@@ -10,7 +10,9 @@ import { IndexComponent } from './index/index.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
+ 
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     CommonModule,
     RoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

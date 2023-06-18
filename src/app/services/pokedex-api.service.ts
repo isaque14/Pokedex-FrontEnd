@@ -7,7 +7,8 @@ import { Observable, map, tap } from 'rxjs';
 })
 export class PokedexApiService {
 
-  private urlBase: string = 'https://localhost:7130/api/'
+  private urlBase: string = 'https://localhost:7130/api/';
+  public responseGPT: string = "";
 
   constructor(private http: HttpClient) { }
 
@@ -24,11 +25,40 @@ export class PokedexApiService {
     );
   }
 
-  getApiPokemonByname(name: string): Observable<any>{
+  getApiPokemonByname(name: string): Observable<any> {
     return this.http.get<any>(`${this.urlBase}pokemon/name/${name}`).pipe(
       map((data) => {
         return data;
       })
     )
+  }
+
+  getApiResponseRotomGPT(text: string): Observable<any> {
+
+
+    return this.http.get<any>(`${this.urlBase}RequestChatGPT?text=${encodeURIComponent(text)}`).pipe(
+      map((data) => {
+        return data;
+      })
+    );
+
+
+
+
+
+
+    // var teste = encodeURIComponent(text);
+
+    // this.http.get<string>(`${this.urlBase}RequestChatGPT?text=${encodeURIComponent(text)}`).pipe(
+    //   tap((resposta: any) => {
+    //     this.responseGPT = resposta;
+    //     console.log(resposta); // A resposta da API será exibida no console
+    //   })
+    // ).subscribe();
+
+    // console.log("No service imprimiu certo  " + this.responseGPT);
+
+    // return this.responseGPT;
+
   }
 }
