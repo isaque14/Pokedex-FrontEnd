@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
 
@@ -34,31 +34,22 @@ export class PokedexApiService {
   }
 
   getApiResponseRotomGPT(text: string): Observable<any> {
-
-
     return this.http.get<any>(`${this.urlBase}RequestChatGPT?text=${encodeURIComponent(text)}`).pipe(
       map((data) => {
         return data;
       })
     );
+  }
 
+  postApiLoginUser(email: string, password: string){//: Observable<any>{
+    const data = {
+      email: email,
+      password: password
+    };
 
+    const body = JSON.stringify(data);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-
-
-
-    // var teste = encodeURIComponent(text);
-
-    // this.http.get<string>(`${this.urlBase}RequestChatGPT?text=${encodeURIComponent(text)}`).pipe(
-    //   tap((resposta: any) => {
-    //     this.responseGPT = resposta;
-    //     console.log(resposta); // A resposta da API será exibida no console
-    //   })
-    // ).subscribe();
-
-    // console.log("No service imprimiu certo  " + this.responseGPT);
-
-    // return this.responseGPT;
-
+    return this.http.post<any>(`${this.urlBase}Token/LoginUser`, body, { headers: headers });
   }
 }

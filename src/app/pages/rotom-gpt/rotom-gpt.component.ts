@@ -27,44 +27,12 @@ export class RotomGPTComponent implements OnInit {
 
   }
 
-  getResponseRotomGPT() {
-
-  }
-
   onSubmit() {
 
     this.pokedexApiService.getApiResponseRotomGPT(this.form.value.request).subscribe((responseData) => {
       this.gptResponse = responseData.response;
       this.form.controls['response'].setValue(this.gptResponse);
-      console.log("variavel direta: " + responseData.response);
     });
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // this.pokedexApiService.getApiResponseRotomGPT(this.form.value.request);
-
-    // console.log(this.form.value.request);
-
-    // var b = this.pokedexApiService.getApiResponseRotomGPT(this.form.value.request);
-
-    // console.log("Na chamada do onClick está certo?  " + b);
-
-
   }
 
 }
