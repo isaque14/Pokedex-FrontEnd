@@ -32,7 +32,7 @@ export class CreateAccountComponent implements OnInit {
 
     this.pokedexApiService.postApiCreateUser(this.form.value.user, this.form.value.password).subscribe(
       data => {
-        console.log(data);
+        console.log(data.message);
       },
       erro => {
 

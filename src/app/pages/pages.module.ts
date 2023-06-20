@@ -12,6 +12,7 @@ import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { UserAreaComponent } from './user-area/user-area.component';
 
  
 
@@ -23,7 +24,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     PokedexComponent,
     RotomGPTComponent,
     LoginComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    UserAreaComponent
   ],
 
   imports: [

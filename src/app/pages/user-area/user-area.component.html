@@ -1,0 +1,131 @@
+<poke-header></poke-header>
+
+<main>
+    <poke-search (emmitSearch)="getSearch($event)"></poke-search>
+</main>
+
+
+<section class="listagem">
+
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th>Pokémon</th>
+                <th>Descrição</th>
+                <th>Tipos</th>
+                <th>Initial</th>
+                <th>Lendário</th>
+                <th>Mítico</th>
+                <th>Estágios de Evolução</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img [src]=pokemon.urlImage alt=""
+                                style="width: 45px; height: 45px" class="rounded-circle" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1"> {{ pokemon.name }} </p>
+                                <!-- <p class="text-muted mb-0"> {{ pokemon.description }} </p> -->
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1"> {{ pokemon.description }} </p>
+                    </td>
+
+                    <td> {{ pokemon.type }} </td>
+
+                    <td>
+                        <p> {{ pokemon.isStarter }} </p>
+                    </td>
+
+                    <td>
+                        <p> {{ pokemon.isLegendary }} </p>
+                    </td>
+
+                    <td>
+                        <p> {{ pokemon.isMythical }} </p>
+                    </td>
+
+                    <td>Stage Evolutions</td>
+                    <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Types</th>
+                <th>Initial</th>
+                <th>Legendary</th>
+                <th>Mythical</th>
+                <th>Stage Evolutions</th>
+            </tr>
+        </thead>
+        <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+
+            <section class="pokemon__status">
+
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img [src]=pokemon.urlImage alt="" style="width: 45px; height: 45px"
+                                class="rounded-circle" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1"> {{ pokemon.name }} </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">Software engineer</p>
+                        <p class="text-muted mb-0">IT department</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success rounded-pill d-inline">Active</span>
+                    </td>
+                    <td>Senior</td>
+                    <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+            </section>
+
+        </ng-template>
+        <tbody>
+
+        </tbody> -->
+
+    <!-- </table> -->
+</section>

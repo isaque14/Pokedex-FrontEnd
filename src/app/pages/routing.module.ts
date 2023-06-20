@@ -8,6 +8,7 @@ import { PokedexComponent } from './pokedex/pokedex.component';
 import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
 import { LoginComponent } from './login/login.component'
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { UserAreaComponent } from './user-area/user-area.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: CreateAccountComponent
+  },
+  {
+    path: 'researcher',
+    component: UserAreaComponent
   }
 
 ];
