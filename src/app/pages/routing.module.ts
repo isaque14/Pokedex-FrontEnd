@@ -7,6 +7,7 @@ import { IndexComponent } from './index/index.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { RotomGPTComponent } from './rotom-gpt/rotom-gpt.component';
 import { LoginComponent } from './login/login.component'
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: CreateAccountComponent
   }
 
 ];

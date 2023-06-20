@@ -41,7 +41,7 @@ export class PokedexApiService {
     );
   }
 
-  postApiLoginUser(email: string, password: string){//: Observable<any>{
+  postApiLoginUser(email: string, password: string) {
     const data = {
       email: email,
       password: password
@@ -49,7 +49,17 @@ export class PokedexApiService {
 
     const body = JSON.stringify(data);
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-
     return this.http.post<any>(`${this.urlBase}Token/LoginUser`, body, { headers: headers });
+  }
+
+  postApiCreateUser(email: string, password: string) {
+    const data = {
+      "email": email,
+      "password": password
+    };
+
+    const body = JSON.stringify(data);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post<any>(`${this.urlBase}Token/CreateUser`, body, { headers: headers });
   }
 }

@@ -29,22 +29,17 @@ export class LoginComponent implements OnInit{
 
   onSubmit(){
     this.pokedexApiService.postApiLoginUser(this.form.value.user, this.form.value.password).subscribe(
-      token =>
+      data =>
       {
-        var newToken = token
-        console.log("Token: Bearer " + token.token)
+        this.token = data.token
+        // console.log("Token: Bearer " + data.token)
+        localStorage.setItem("token", data.token);
+        var a = localStorage.getItem("token");
+        console.log("Token: Bearer " + a);
       },
       erro => {
 
       }
     );
-    
-    
-    
-    
-    //.subscribe((responseData) => {
-      // this.token = responseData.token;
-      // console.log("Logado, Token: " + responseData.token);
-    // })
   }
 }
