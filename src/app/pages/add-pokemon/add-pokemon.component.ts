@@ -12,21 +12,6 @@ export class AddPokemonComponent implements OnInit {
 
   form: FormGroup;
 
-  // pokemon = {
-  //   name: "",
-  //   types: [],
-  //   description: "",
-  //   pokedexNumber: 0,
-  //   evolutionLine: [],
-  //   isStarter: false,
-  //   isLegendary: false,
-  //   isMythical: false,
-  //   isUltraBeast: false,
-  //   isMega: false,
-  //   urlImage: "",
-  //   regionId: 0
-  // }
-
   constructor(private pokedexApiService: PokedexApiService, private formBuilder: FormBuilder, private router: Router) {
     this.form = formBuilder.group({
       name: [null],

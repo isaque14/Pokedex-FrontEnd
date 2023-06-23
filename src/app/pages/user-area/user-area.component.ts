@@ -32,6 +32,19 @@ export class UserAreaComponent implements OnInit{
     this.getAllPokemons = filter;
   }
 
+  btnDeletePokemon(id: number) {
+
+    this.pokedexApiService.apiDeletePokemon(id).subscribe(
+      data => {
+        console.log(data);
+      },
+      erro => {
+
+      }
+    );
+
+  }
+
   private convertTypeNumbersToNames(): void {
     const typeMappings = [
       'Normal',
