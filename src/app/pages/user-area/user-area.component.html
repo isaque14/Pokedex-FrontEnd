@@ -4,6 +4,10 @@
     <poke-search (emmitSearch)="getSearch($event)"></poke-search>
 </main>
 
+<a href='addpoke' type="button" class="btn btn-success btn-sm btn-rounded btn-add">
+    Pokémon +
+</a>
+<br>
 
 <section class="listagem">
 
@@ -28,7 +32,7 @@
                                 style="width: 45px; height: 45px" class="rounded-circle" />
                             <div class="ms-3">
                                 <p class="fw-bold mb-1"> {{ pokemon.name }} </p>
-                                <!-- <p class="text-muted mb-0"> {{ pokemon.description }} </p> -->
+                                <p class="text-muted mb-0"> N° {{ pokemon.pokedexNumber }} </p>
                             </div>
                         </div>
                     </td>
@@ -50,12 +54,19 @@
                         <p> {{ pokemon.isMythical }} </p>
                     </td>
 
-                    <td>Stage Evolutions</td>
+                    <td> {{ pokemon.evolutionLine }} </td>
                     <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                            Edit
+                        <button type="button" class="btn btn-primary btn-sm btn-rounded">
+                            Editar
                         </button>
                     </td>
+
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm btn-rounded">
+                            Excluir
+                        </button>
+                    </td>
+
                 </tr>
             </ng-template>
         </tbody>

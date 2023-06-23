@@ -62,4 +62,14 @@ export class PokedexApiService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post<any>(`${this.urlBase}Token/CreateUser`, body, { headers: headers });
   }
+
+  postApiCreatePokemon(pokemon: any) {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem("token")}`
+    });
+
+    return this.http.post<any>(`${this.urlBase}Pokemon`, pokemon, { headers: headers });
+  }
 }
