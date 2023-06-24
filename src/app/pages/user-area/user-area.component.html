@@ -11,6 +11,16 @@
 
 <section class="listagem">
 
+    <div div class="alert alert-success fade show" role="alert" *ngIf="success"
+            style="position: fixed; top: 8%; left: 75%; transform: translate(0, -50%); z-index: 9999;">
+            Pokémon Deletado com sucesso!
+        </div>
+
+        <div div class="alert alert-danger fade show" role="alert" *ngIf="error"
+            style="position: fixed; top: 10%; left: 65%; transform: translate(0, -50%); z-index: 9999;">
+            Ops, parece que vc não está logado ou não tem permissão de apagar este pokemon!
+        </div>
+
     <table class="table align-middle mb-0 bg-white">
         <thead class="bg-light">
             <tr>

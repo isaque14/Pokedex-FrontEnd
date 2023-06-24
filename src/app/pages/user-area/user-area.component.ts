@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokedexApiService } from 'src/app/services/pokedex-api.service';
 
 @Component({
@@ -8,10 +9,13 @@ import { PokedexApiService } from 'src/app/services/pokedex-api.service';
 })
 export class UserAreaComponent implements OnInit{
 
-  constructor(private pokedexApiService: PokedexApiService) { }
+  constructor(private pokedexApiService: PokedexApiService, private router: Router) { }
 
   private setAllPokemons: any;
   public getAllPokemons: any;
+
+  public success: boolean = false;
+  public error: boolean = false
 
   ngOnInit(): void {
     this.pokedexApiService.apiListAllPokemons.subscribe(
@@ -36,13 +40,31 @@ export class UserAreaComponent implements OnInit{
 
     this.pokedexApiService.apiDeletePokemon(id).subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
+        this.showAlertAndRedirect("researcher");
       },
       erro => {
-
+        this.showAlertAndRedirect("login");
       }
     );
 
+  }
+
+  showAlertAndRedirect(route: string) {
+    if (route === "login") {
+      this.error = true;
+    }
+    else {
+      this.success = true;
+      setTimeout(() => {
+        this.router.navigate([route]);
+      }, 4000)
+      location.reload();
+    }
+
+    setTimeout(() => {
+      this.router.navigate([route]);
+    }, 6000);
   }
 
   private convertTypeNumbersToNames(): void {
