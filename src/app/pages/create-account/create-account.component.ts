@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,6 +12,8 @@ import { PokedexApiService } from 'src/app/services/pokedex-api.service';
 export class CreateAccountComponent implements OnInit {
 
   form: FormGroup;
+  public error: boolean = false;
+  public success: boolean = false;
 
   constructor(private pokedexApiService: PokedexApiService, private formBuilder: FormBuilder, private router: Router) {
     this.form = formBuilder.group({
@@ -32,10 +35,10 @@ export class CreateAccountComponent implements OnInit {
 
     this.pokedexApiService.postApiCreateUser(this.form.value.user, this.form.value.password).subscribe(
       data => {
-        console.log(data.message);
+        this.success = true;
       },
-      erro => {
-
+      (error: HttpErrorResponse) => {
+        this.error = true;
       }
     );
   }
