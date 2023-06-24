@@ -73,6 +73,16 @@ export class PokedexApiService {
     return this.http.post<any>(`${this.urlBase}Pokemon`, pokemon, { headers: headers });
   }
 
+  putApiUpdatePokemon(pokemon: any, id: number) {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem("token")}`
+    });
+
+    return this.http.put<any>(`${this.urlBase}Pokemon/?id=${id}`, pokemon, { headers: headers });
+  }
+
   apiDeletePokemon(id: number) {
 
     const headers = new HttpHeaders({
