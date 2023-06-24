@@ -11,6 +11,8 @@ import { PokedexApiService } from 'src/app/services/pokedex-api.service';
 export class AddPokemonComponent implements OnInit {
 
   form: FormGroup;
+  public success: boolean = false;
+  public error: boolean = false;
 
   constructor(private pokedexApiService: PokedexApiService, private formBuilder: FormBuilder, private router: Router) {
     this.form = formBuilder.group({
@@ -49,12 +51,25 @@ export class AddPokemonComponent implements OnInit {
 
     this.pokedexApiService.postApiCreatePokemon(body).subscribe(
       data => {
-        console.log(data);
+        this.showAlertAndRedirect("researcher");
       },
       erro => {
-
+        this.showAlertAndRedirect("login");
       }
     );
+  }
+
+  showAlertAndRedirect(route: string) {
+    if (route === "login") {
+      this.error = true;
+    }
+    else {
+      this.success = true;
+    }
+
+    setTimeout(() => {
+      this.router.navigate([route]);
+    }, 6000);
   }
 
   getIdType(tipo: string): number | undefined {

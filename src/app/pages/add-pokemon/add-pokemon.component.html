@@ -4,6 +4,17 @@
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <!-- 2 column grid layout with text inputs for the first and last names -->
+       
+        <div div class="alert alert-success fade show" role="alert" *ngIf="success"
+            style="position: fixed; top: 8%; left: 75%; transform: translate(0, -50%); z-index: 9999;">
+            Pokémon Criado com sucesso!
+        </div>
+
+        <div div class="alert alert-danger fade show" role="alert" *ngIf="error"
+            style="position: fixed; top: 10%; left: 65%; transform: translate(0, -50%); z-index: 9999;">
+            Ops, parece que vc não está logado, faça login com seu e-mail ou crie uma conta!
+        </div>
+       
         <div class="row mb-4">
             <div class="col">
                 <div class="form-outline">
@@ -33,77 +44,7 @@
                 </div>
             </div>
 
-            <!-- <div>
-                <select id="textSelect" class="select " style="display: inline;">
-                    <option value="">Tipo 1</option>
-                    <option *ngFor="let tipo of tiposPokemon" [value]="tipo.id">{{ tipo.nome }}</option>
-                </select>
-
-                <select id="textSelect" class="select" style="display: inline;">
-                    <option value="">Tipo 2</option>
-                    <option *ngFor="let tipo of tiposPokemon" [value]="tipo.id">{{ tipo.nome }}</option>
-                </select>
-            </div> -->
-
         </div>
-
-        <!-- <div class="row">
-            <div class="col">
-                <section>
-                    <label class="form-check-label">É um Pokémon Inicial?</label>
-                    
-                    <div class="form-check">
-                        <input  class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" />
-                        <label formControlName="initial" class="form-check-label" for="flexRadioDefault1">Sim</label>
-                    </div>
-
-                    
-                    <div class="form-check">
-                        <input formControlName="initial" class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2"
-                            checked />
-                        <label class="form-check-label" for="flexRadioDefault2">Não</label>
-                    </div>
-                </section>
-            </div>
-
-            <div class="col">
-                <section>
-                    <label class="form-check-label">É Lendário?</label>
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" />
-                        <label class="form-check-label" for="flexRadioDefault3">Sim</label>
-                    </div>
-
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault4"
-                            checked />
-                        <label class="form-check-label" for="flexRadioDefault4">Não</label>
-                    </div>
-                </section>
-            </div>
-
-            <div class="col">
-                <section>
-                    <label class="form-check-label">É Mítico?</label>
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault5" />
-                        <label class="form-check-label" for="flexRadioDefault5">Sim</label>
-                    </div>
-
-                    
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault6"
-                            checked />
-                        <label class="form-check-label" for="flexRadioDefault6">Não</label>
-                    </div>
-                </section>
-            </div>
-        </div> -->
-
-
 
         <!-- Text input -->
         <div class="form-outline mb-4">
