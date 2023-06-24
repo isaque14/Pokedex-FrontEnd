@@ -32,6 +32,52 @@ export class PokeListComponent implements OnInit {
     this.getAllPokemons = filter;
   }
 
+  public filterByLegendary(){
+    this.pokedexApiService.getApiPokemonByLegendary().subscribe(
+      data => {
+
+        console.log(data);
+        this.getAllPokemons = data.object;
+        this.convertTypeNumbersToNames();
+        this.setAllPokemons = this.getAllPokemons;
+      }
+    );
+  }
+
+  public filterByMythical(){
+    this.pokedexApiService.getApiPokemonByMythical().subscribe(
+      data => {
+
+        console.log(data);
+        this.getAllPokemons = data.object;
+        this.convertTypeNumbersToNames();
+        this.setAllPokemons = this.getAllPokemons;
+      }
+    );
+  }
+
+  public filterByStarter(){
+    this.pokedexApiService.getApiPokemonByStarter().subscribe(
+      data => {
+
+        console.log(data);
+        this.getAllPokemons = data.object;
+        this.convertTypeNumbersToNames();
+        this.setAllPokemons = this.getAllPokemons;
+      }
+    );
+  }
+
+  public cleanFilter(){
+    this.pokedexApiService.apiListAllPokemons.subscribe(
+      res => {
+        this.getAllPokemons = res.object;
+        this.convertTypeNumbersToNames();
+        this.setAllPokemons = this.getAllPokemons;
+      }
+    );
+  }
+
   private convertTypeNumbersToNames(): void {
     const typeMappings = [
       'Normal',

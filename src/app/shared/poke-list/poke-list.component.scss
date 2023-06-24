@@ -2,6 +2,14 @@
 
 $padding: rem-calc(20);
 
+.filter {
+    a {
+        margin-right: 5%;
+    }
+
+}
+
+
 .listagem {
     display: flex;
     justify-content: space-between;

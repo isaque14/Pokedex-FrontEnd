@@ -33,6 +33,30 @@ export class PokedexApiService {
     )
   }
 
+  getApiPokemonByLegendary(): Observable<any> {
+    return this.http.get<any>(`${this.urlBase}pokemon/legendary`).pipe(
+      map((data) => {
+        return data;
+      })
+    )
+  }
+
+  getApiPokemonByMythical(): Observable<any> {
+    return this.http.get<any>(`${this.urlBase}pokemon/mythical`).pipe(
+      map((data) => {
+        return data;
+      })
+    )
+  }
+
+  getApiPokemonByStarter(): Observable<any> {
+    return this.http.get<any>(`${this.urlBase}pokemon/starter`).pipe(
+      map((data) => {
+        return data;
+      })
+    )
+  }
+
   getApiResponseRotomGPT(text: string): Observable<any> {
     return this.http.get<any>(`${this.urlBase}RequestChatGPT?text=${encodeURIComponent(text)}`).pipe(
       map((data) => {
