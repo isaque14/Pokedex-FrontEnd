@@ -12,6 +12,8 @@ export class EditPokemonComponent implements OnInit {
 
   public form!: FormGroup;
   public pokemon: any;
+  public success: boolean = false;
+  public error: boolean = false;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -79,12 +81,25 @@ export class EditPokemonComponent implements OnInit {
 
     this.pokedexApiService.putApiUpdatePokemon(body, this.pokemon.id).subscribe(
       data => {
-        console.log(data);
+        this.showAlertAndRedirect("researcher");
       },
       erro => {
-
+        this.showAlertAndRedirect("login")
       }
     );
+  }
+
+  showAlertAndRedirect(route: string) {
+    if(route === "login"){
+      this.error = true;
+    }
+    else{
+      this.success = true;
+    }
+
+    setTimeout(() => {
+      this.router.navigate([route]);
+    }, 6000); 
   }
 
   getIdType(tipo: string): number | undefined {

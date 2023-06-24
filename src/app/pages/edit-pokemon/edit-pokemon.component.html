@@ -4,6 +4,17 @@
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <!-- 2 column grid layout with text inputs for the first and last names -->
+
+        <div div class="alert alert-success fade show" role="alert" *ngIf="success"
+            style="position: fixed; top: 8%; left: 75%; transform: translate(0, -50%); z-index: 9999;">
+            Pokemon Atualizado com sucesso!
+        </div>
+
+        <div div class="alert alert-danger fade show" role="alert" *ngIf="error"
+            style="position: fixed; top: 10%; left: 65%; transform: translate(0, -50%); z-index: 9999;">
+            Ops, parece que vc não está logado, faça login com seu e-mail ou crie uma conta!
+        </div>
+
         <div class="row mb-4">
             <div class="col">
                 <div class="form-outline">
@@ -14,11 +25,11 @@
 
             <div class="col">
                 <div class="form-outline mb-4">
-                    <input formControlName="number" type="number" id="form6Example6" class="form-control"/>
+                    <input formControlName="number" type="number" id="form6Example6" class="form-control" />
                     <label class="form-label" for="form6Example6">Número na Pokedex</label>
                 </div>
             </div>
-            
+
             <div class="col">
                 <div class="form-outline">
                     <input formControlName="type1" type="text" id="form6Example1" class="form-control" />
