@@ -56,9 +56,10 @@
 
                     <td> {{ pokemon.evolutionLine }} </td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm btn-rounded">
+                        <a [routerLink]="'/' + 'edit-poke' + '/' + pokemon.pokedexNumber" 
+                        type="button" class="btn btn-success btn-sm btn-rounded btn-add">
                             Editar
-                        </button>
+                        </a>
                     </td>
 
                     <td>

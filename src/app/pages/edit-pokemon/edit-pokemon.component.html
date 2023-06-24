@@ -1,0 +1,54 @@
+<poke-header></poke-header>
+
+<main>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <input formControlName="name" type="text" id="form6Example1" class="form-control" />
+                    <label class="form-label" for="form6Example1">Nome</label>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-outline mb-4">
+                    <input formControlName="number" type="number" id="form6Example6" class="form-control"/>
+                    <label class="form-label" for="form6Example6">Número na Pokedex</label>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="form-outline">
+                    <input formControlName="type1" type="text" id="form6Example1" class="form-control" />
+                    <label class="form-label" for="form6Example1">Tipo 1</label>
+                </div>
+
+                <div class="col">
+                    <div class="form-outline">
+                        <input formControlName="type2" type="text" id="form6Example1" class="form-control" />
+                        <label class="form-label" for="form6Example1">Tipo 2 (Opcional)</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+            <input formControlName="urlImage" type="text" id="form6Example3" class="form-control" />
+            <label class="form-label" for="form6Example3">URL da imagem</label>
+        </div>
+
+        <!-- Message input -->
+        <div class="form-outline mb-4">
+            <textarea formControlName="description" class="form-control" id="form6Example7" rows="4"></textarea>
+            <label class="form-label" for="form6Example7">Descrição</label>
+        </div>
+
+        <button type="submit" class="btn btn-success mb-4 mr-2">OK</button>
+        <button type="submit" class="btn btn-danger mb-4">CANCELAR</button>
+
+    </form>
+</main>

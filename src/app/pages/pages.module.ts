@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { UserAreaComponent } from './user-area/user-area.component';
 import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
+import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 
  
 
@@ -27,7 +28,8 @@ import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
     LoginComponent,
     CreateAccountComponent,
     UserAreaComponent,
-    AddPokemonComponent
+    AddPokemonComponent,
+    EditPokemonComponent
   ],
 
   imports: [

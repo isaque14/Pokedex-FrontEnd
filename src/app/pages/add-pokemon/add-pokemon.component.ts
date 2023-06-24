@@ -59,29 +59,30 @@ export class AddPokemonComponent implements OnInit {
 
   getIdType(tipo: string): number | undefined {
     if (tipo === null) {
-      return 19;
+      return 18;
     }
 
     const types = [
-      { id: 1, nome: 'Normal' },
-      { id: 2, nome: 'Fire' },
-      { id: 3, nome: 'Water' },
-      { id: 4, nome: 'Electric' },
-      { id: 5, nome: 'Grass' },
-      { id: 6, nome: 'Ice' },
-      { id: 7, nome: 'Fighting' },
-      { id: 8, nome: 'Poison' },
-      { id: 9, nome: 'Ground' },
-      { id: 10, nome: 'Flying' },
-      { id: 11, nome: 'Psychic' },
-      { id: 12, nome: 'Bug' },
-      { id: 13, nome: 'Rock' },
-      { id: 14, nome: 'Ghost' },
-      { id: 15, nome: 'Dragon' },
-      { id: 16, nome: 'Dark' },
-      { id: 17, nome: 'Steel' },
-      { id: 18, nome: 'Fairy' },
-      { id: 19, nome: 'unknown' }
+      { id: 0, nome: 'Normal' },
+      { id: 1, nome: 'Fire' },
+      { id: 2, nome: 'Water' },
+      { id: 3, nome: 'Electric' },
+      { id: 4, nome: 'Grass' },
+      { id: 5, nome: 'Ice' },
+      { id: 6, nome: 'Fighting' },
+      { id: 7, nome: 'Poison' },
+      { id: 8, nome: 'Ground' },
+      { id: 9, nome: 'Flying' },
+      { id: 10, nome: 'Psychic' },
+      { id: 11, nome: 'Bug' },
+      { id: 12, nome: 'Rock' },
+      { id: 13, nome: 'Ghost' },
+      { id: 14, nome: 'Dragon' },
+      { id: 15, nome: 'Dark' },
+      { id: 16, nome: 'Steel' },
+      { id: 17, nome: 'Fairy' },
+      { id: 18, nome: 'unknown' },
+      { id: 19, nome: 'Shadow' }
     ];
 
     const type = types.find(t => t.nome.toLowerCase() === tipo.toLowerCase());
