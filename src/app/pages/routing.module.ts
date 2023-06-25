@@ -11,6 +11,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { UserAreaComponent } from './user-area/user-area.component';
 import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'edit-poke/:id',
     component: EditPokemonComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
   
 

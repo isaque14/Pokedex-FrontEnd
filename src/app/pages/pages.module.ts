@@ -15,6 +15,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { UserAreaComponent } from './user-area/user-area.component';
 import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
+import { AboutComponent } from './about/about.component';
 
  
 
@@ -29,7 +30,8 @@ import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
     CreateAccountComponent,
     UserAreaComponent,
     AddPokemonComponent,
-    EditPokemonComponent
+    EditPokemonComponent,
+    AboutComponent
   ],
 
   imports: [
