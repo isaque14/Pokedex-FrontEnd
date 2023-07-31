@@ -6,6 +6,9 @@
 - Neste projeto, você pode explorar a Pokedex, que apresenta os Pokémon originais da franquia, bem como as novas descobertas feitas por pesquisadores. Se você é um pesquisador Pokémon e deseja catalogar suas próprias descobertas em nossa Pokedex, basta criar uma conta utilizando seu e-mail e senha para acessar a área exclusiva dos pesquisadores. </br>
 Além disso, você pode fazer perguntas ao Chat GPT através do RotomDex. Com essa funcionalidade, o RotomDex possui um vasto conhecimento sobre o mundo Pokémon e está pronto para responder suas dúvidas.
 
+## Vídeo Apresentação do Projeto
+- [Apresentação do Projeto](https://youtu.be/S3BdYtB_ESc)
+
 ## Links para os outros projetos
 [Back-End (API)](https://github.com/isaque14/pokedex/tree/main)
 </br>
